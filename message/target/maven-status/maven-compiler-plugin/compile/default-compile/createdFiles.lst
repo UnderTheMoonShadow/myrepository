@@ -1,0 +1,7 @@
+com\x\entity\Message.class
+com\x\mapper\MessageMapper.class
+com\x\servlet\PageMessageServlet.class
+com\x\utils\MybatisUtils.class
+com\x\service\MessageService.class
+com\x\service\impl\MessageServiceImpl.class
+com\x\servlet\AddMessageServlet.class
