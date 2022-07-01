@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.x.mapper.OrderMapper">
+    <select id="user" parameterType="String" resultType="Order">
+        select *
+        from housedb.t_order
+        where username = #{user}
+    </select>
+    <update id="update">
+        update housedb.t_order
+        set comment_state=2
+        where id = #{orderId}
+    </update>
+    <insert id="add" parameterType="Order">
+        insert into housedb.t_order values (0,#{username},#{itemId},#{title},#{houseType},#{rentType},#{price},#{img},0)
+    </insert>
+</mapper>

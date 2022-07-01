@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.x.mapper.ItemMapper">
+    <select id="findByCity" parameterType="String" resultType="Item">
+        select *
+        from housedb.t_item
+        where city = #{city}
+        order by housedb.t_item.sales desc
+    </select>
+    <select id="reco" parameterType="String" resultType="Item">
+        select *
+        from housedb.t_item
+        where city = #{city}
+          and recommendation > 0
+    </select>
+    <select id="search" resultType="Item">
+        select *
+        from housedb.t_item
+        where city = #{city}
+          and title like '%${content}%'
+    </select>
+    <select id="item" parameterType="int" resultType="Item">
+        select *
+        from housedb.t_item
+        where id = #{id}
+    </select>
+    <update id="isrent" parameterType="int">
+        update housedb.t_item set is_rented=1 where id=#{id}
+    </update>
+</mapper>
