@@ -10,7 +10,7 @@ import com.google.gson.Gson;
 public class SendMessage {
     public static void send(String phone,String code) {
         try{
-            DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", "LTAI5tK5mBjEnGngAxM1WjEL", "GOZ37c9ER06i4zCEZUcNVNW7dkfrMP");
+            DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", "", "");
             DefaultProfile.addEndpoint("","cn-hangzhou","Dysmsapi","dysmsapi.aliyuncs.com");
             IAcsClient client = new DefaultAcsClient(profile);
             SendSmsRequest request = new SendSmsRequest();
